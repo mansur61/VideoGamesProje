@@ -8,14 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+import UIKit
 
+
+class ViewController: UIViewController,GetGameListDelegate {
+
+    var getGameListArray:[getGameListInfo] = []
+    var dataSource = GetGameListSource(baseUrl: "https://api.rawg.io/api/")
+       
+       
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print("HELLOOOOOOOO")
+        dataSource.delegete = self
+        dataSource.getGameList(ismeGoreGeetir: "games?page=2")
+        
         // Do any additional setup after loading the view.
-        print("mansur")
     }
-
-
-}
+    
+     func getGameListState(getGameList: [getGameListInfo]) {
+       
+        self.getGameListArray=getGameList
+       
+        /*DispatchQueue.main.async {
+            
+        }*/
+    }
 
