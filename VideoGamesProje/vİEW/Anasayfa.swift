@@ -8,7 +8,6 @@
 
 import UIKit
 
-import UIKit
 
 
 class Anasayfa: UIViewController,GetGameListDelegate {
@@ -16,7 +15,7 @@ class Anasayfa: UIViewController,GetGameListDelegate {
     var getGameListArray:[getGameListInfo] = []
     var dataSource = GetGameListSource(baseUrl: "https://api.rawg.io/api/")
        
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +24,9 @@ class Anasayfa: UIViewController,GetGameListDelegate {
         dataSource.delegete = self
         dataSource.getGameList(ismeGoreGeetir: "games?page=2")
         
-        collectionView.delegate = self
-        collectionView.dataSource=self
+        collection.dataSource = self
+        collection.dataSource = self
+        
         
         // Do any additional setup after loading the view.
     }
@@ -56,7 +56,10 @@ extension Anasayfa:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+        let cell = collection.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCollectionViewCell
+        cell.gameAd.text = self.getGameListArray[indexPath.row].seo_title
+        cell.rating_released.text = " \(String(describing: self.getGameListArray[indexPath.row].results[indexPath.row].rating)) -  \(String(describing: self.getGameListArray[indexPath.row].results[indexPath.row].released))"
+        cell.resim.image = UIImage(systemName: "\(String(describing: self.getGameListArray[indexPath.row].results[indexPath.row].background_image))", withConfiguration: nil)
         
         return cell
     }
