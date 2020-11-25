@@ -21,8 +21,8 @@ struct getGameListInfo: Decodable {
     let noindex:Bool?
     let nofollow:Bool?
     let description:String?
-    let filters:Filters?
-    let nofollow_collections:NoFollowCollection?
+    //let filters:Filters?
+   // let nofollow_collections:NoFollowCollection?
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
@@ -36,11 +36,12 @@ struct getGameListInfo: Decodable {
         case noindex = "noindex"
         case nofollow = "nofollow"
         case description = "description"
-        case filters = "filters"
-        case nofollow_collections = "nofollow_collections"
+        //case filters = "filters"
+        //case nofollow_collections = "nofollow_collections"
     }
     
 }
+/*
 struct Filters:Decodable {
     let years:[Yillar]
     
@@ -72,6 +73,7 @@ struct Yillar_Years:Decodable {
         case nofollow = "nofollow"
     }
 }
+ */
 struct ArrayResults: Decodable {
     let id:Int?
     let slug:String?
@@ -81,24 +83,24 @@ struct ArrayResults: Decodable {
     let background_image:String?
     let rating:Float?
     let rating_top:Int?
-    let ratigns:[ArrayRatings] //result içinde
+    //let ratigns:[ArrayRatings] // result içinde, Bunu çalıştıramdık, bakılacak tekrar
     let ratings_count:Int?
     let reviews_text_count:Int?
     let added:Int?
-    let added_by_status:AddedStatus  //result içinde
+    let added_by_status:AddedStatus?  //result içinde
     let metacritic:Int?
     let playtime:Int?
     let suggestions_count:Int?
-    //let user_game:String?
+    //let user_game:String? null olacak
     let reviews_count:Int?
     let saturated_color:String?
     let dominant_color:String?
-    let platform:[Platfroms] //result içinde
+    //let platforms:[Platforms] //result içinde, Bunu düzelteceğiz
     let parent_platforms:[ParentPlatform]
-    let gender:[Gender]
+    let genres:[Genres]
     let stores:[Stores]
     let clip:Clip?
-    let tags:[Tags]
+   let tags:[Tags]
     let short_screenshots:[ShortScreen]
     
     
@@ -111,28 +113,30 @@ struct ArrayResults: Decodable {
         case background_image = "background_image"
         case rating = "rating"
         case rating_top = "rating_top"
-        case ratigns = "ratigns"
-       case ratings_count = "ratings_count"
-       case reviews_text_count = "reviews_text_count"
-       case added = "added"
+        //case ratigns = "ratigns"
+        case ratings_count = "ratings_count"
+        case reviews_text_count = "reviews_text_count"
+        case added = "added"
         case added_by_status = "added_by_status"
-         case metacritic = "metacritic"
+        case metacritic = "metacritic"
         case playtime = "playtime"
         case suggestions_count = "suggestions_count"
        // case user_game = "user_game"
         case reviews_count = "reviews_count"
-         case saturated_color = "saturated_color"
+        case saturated_color = "saturated_color"
         case dominant_color = "dominant_color"
-       case platform = "platform"
+       //case platforms = "platforms"
         case parent_platforms = "parent_platforms"
-       case gender = "gender"
-        case stores = "stores"
-        case clip = "clip"
+       case genres = "genres"
+       case stores = "stores"
+         case clip = "clip"
         case tags = "tags"
         case short_screenshots = "short_screenshots"
+
     }
     
 }
+
 struct ShortScreen:Decodable {
     let id:Int?
     let image:String?
@@ -143,12 +147,13 @@ struct ShortScreen:Decodable {
     
     }
 }
+
 struct Tags:Decodable {
     let id:Int?
     let name:String?
     let slug:String?
     let language:String?
-    let games_count:String?
+    let games_count:Int?
     let image_background:String?
     
     enum CodingKeys: String, CodingKey {
@@ -160,37 +165,42 @@ struct Tags:Decodable {
         case image_background = "image_background"
     }
 }
+
 struct Clip:Decodable {
-     let clips:Clips?
+     //let clips:Clips?
     let video:String?
     let preview:String?
     enum CodingKeys: String, CodingKey {
-        case clips = "clips"
+        //case clips = "clips"
         case video = "video"
         case preview = "preview"
        
     }
 }
+/*
 struct Clips:Decodable {
     
 }
+ */
+   
 struct Stores:Decodable {
     let id:Int?
-    let store:Store?
+    //let store:Store? // Burda bir sıkıntı oldu,düzeltilecek
     let url_en:String?
     //let url_ru:String? null
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case store = "store"
+       // case store = "store"
         case url_en = "url_en"
     }
    
 }
+/*
 struct Store:Decodable {
     let id:Int?
     let name:String?
     let slug:String?
-    let domain:Int?
+    let domain:String?
     let games_count:String?
     let image_background:String?
     
@@ -203,7 +213,9 @@ struct Store:Decodable {
         case image_background = "image_background"
     }
 }
-struct Gender:Decodable {
+ */
+
+struct Genres:Decodable {
     let id:Int?
     let name:String?
     let slug:String?
@@ -218,6 +230,7 @@ struct Gender:Decodable {
         case image_background = "image_background"
     }
 }
+ 
 struct ParentPlatform:Decodable {
     let platform:ParentPlatform_Platform?
     enum CodingKeys: String, CodingKey {
@@ -225,6 +238,7 @@ struct ParentPlatform:Decodable {
         
     }
 }
+
 struct ParentPlatform_Platform:Decodable {
     let id:Int?
     let name:String?
@@ -235,18 +249,21 @@ struct ParentPlatform_Platform:Decodable {
         case slug = "slug"
     }
 }
-struct Platfroms:Decodable {
+/*
+struct Platforms:Decodable {
     let platform:Platfrom?
     let released_at:String?
-    let requirements_en:Requirements?
+   // let requirements_en:Requirements?
    // let requirements_ru:String? null bir değer
     enum CodingKeys: String, CodingKey {
         case platform = "platform"
         case released_at = "released_at"
-        case requirements_en = "requirements_en"
+     //   case requirements_en = "requirements_en"
     }
     
 }
+ */
+/*
 struct Requirements:Decodable {
     let minimum:String?
     let recommended:String?
@@ -255,9 +272,10 @@ struct Requirements:Decodable {
         case minimum = "minimum"
         case recommended = "recommended"
     }
-}
+}*/
+/*
 struct Platfrom: Decodable{
-     let id:Int?
+      let id:Int?
        let name:String?
        let slug:String?
        let image:String?
@@ -277,6 +295,7 @@ struct Platfrom: Decodable{
            case image_background = "image_background"
        }
 }
+ */
 struct AddedStatus:Decodable {
     let yet:Int?
     let owned:Int?
@@ -294,11 +313,12 @@ struct AddedStatus:Decodable {
         case playing = "playing"
     }
 }
+ /*
 struct ArrayRatings:Decodable {
     let id:Int?
     let title:String?
     let count:Int?
-    let percent:Float?
+    let percent:Double?
     
     
     enum CodingKeys: String, CodingKey {
@@ -309,6 +329,8 @@ struct ArrayRatings:Decodable {
         
     }
 }
+ */
+/*
 struct NoFollowCollection:Decodable {
     let stores:String?
     
@@ -316,3 +338,4 @@ struct NoFollowCollection:Decodable {
         case stores = "stores"
     }
 }
+ */

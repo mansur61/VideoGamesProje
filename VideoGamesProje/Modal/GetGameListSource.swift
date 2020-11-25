@@ -28,17 +28,22 @@ class  GetGameListSource: NSObject {
     
     func getGameList(ismeGoreGeetir:String){
        print(self.baseUrl+ismeGoreGeetir)
+        
         AF.request(self.baseUrl+ismeGoreGeetir,method: .get,parameters: nil,encoding: URLEncoding.default,headers: nil,interceptor: nil).response { (responseData) in
             print("We got the response")
             print(responseData.result)
             guard let data = responseData.data else{return}
-           
+            
+            /*if let jsonObj = try? JSONSerialization.jsonObject(with: data) as? NSDictionary {           //response
+                print(jsonObj)
+                
+           }*/
                do{
                    
                    let getPosts = try JSONDecoder().decode(getGameListInfo.self, from: data)
                    //if getPosts.count != 0 {
-                print("getPostsUzunluk :>" ,getPosts)
-                    //self.delegete?.getGameListState(getGameList: [getPosts])
+                //print("getPostsUzunluk :>" ,getPosts.seo_title!)
+                    self.delegete?.getGameListState(getGameList: [getPosts])
                    //}
        
                }catch{
