@@ -27,11 +27,12 @@ class  GetGameListSource: NSObject {
     }
     
     func getGameList(ismeGoreGeetir:String){
-       
+       print(self.baseUrl+ismeGoreGeetir)
         AF.request(self.baseUrl+ismeGoreGeetir,method: .get,parameters: nil,encoding: URLEncoding.default,headers: nil,interceptor: nil).response { (responseData) in
             print("We got the response")
-            
+            print(responseData.result)
             guard let data = responseData.data else{return}
+           
                do{
                    
                    let getPosts = try JSONDecoder().decode(getGameListInfo.self, from: data)
@@ -41,7 +42,7 @@ class  GetGameListSource: NSObject {
                    //}
        
                }catch{
-                   print("Api verileri ile uyuşmazlık olmuş olabilir..")
+                print("Api verileri ile uyuşmazlık olmuş olabilir..")
                }
             
         }

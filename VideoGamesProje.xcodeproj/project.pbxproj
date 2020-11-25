@@ -18,7 +18,6 @@
 		335F38F2256D98E300371950 /* GetGameDetailsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38ED256D98E200371950 /* GetGameDetailsSource.swift */; };
 		335F38F3256D98E300371950 /* GetGameListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EE256D98E200371950 /* GetGameListInfo.swift */; };
 		335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EF256D98E200371950 /* GetGameListSource.swift */; };
-		335F38F5256D98E300371950 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38F0256D98E300371950 /* ViewController.swift */; };
 		335F38F6256D98E300371950 /* getGameDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38F1256D98E300371950 /* getGameDetailsInfo.swift */; };
 		D0AD8D67FBE68079C0B44611 /* Pods_VideoGamesProjeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */; };
 		E610927A9EB043F59D6E7755 /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41E36B139EF41926F28653F /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework */; };
@@ -60,7 +59,6 @@
 		335F38ED256D98E200371950 /* GetGameDetailsSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameDetailsSource.swift; sourceTree = "<group>"; };
 		335F38EE256D98E200371950 /* GetGameListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameListInfo.swift; sourceTree = "<group>"; };
 		335F38EF256D98E200371950 /* GetGameListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameListSource.swift; sourceTree = "<group>"; };
-		335F38F0256D98E300371950 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		335F38F1256D98E300371950 /* getGameDetailsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getGameDetailsInfo.swift; sourceTree = "<group>"; };
 		37FB5AC8F64B18A142E6980B /* Pods-VideoGamesProje.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGamesProje.release.xcconfig"; path = "Target Support Files/Pods-VideoGamesProje/Pods-VideoGamesProje.release.xcconfig"; sourceTree = "<group>"; };
 		47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoGamesProjeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +163,6 @@
 				335F38ED256D98E200371950 /* GetGameDetailsSource.swift */,
 				335F38EE256D98E200371950 /* GetGameListInfo.swift */,
 				335F38EF256D98E200371950 /* GetGameListSource.swift */,
-				335F38F0256D98E300371950 /* ViewController.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */,
 				335F38BB256D951B00371950 /* AppDelegate.swift in Sources */,
 				335F38F2256D98E300371950 /* GetGameDetailsSource.swift in Sources */,
-				335F38F5256D98E300371950 /* ViewController.swift in Sources */,
 				335F38F3256D98E300371950 /* GetGameListInfo.swift in Sources */,
 				335F38BD256D951B00371950 /* SceneDelegate.swift in Sources */,
 				335F38F6256D98E300371950 /* getGameDetailsInfo.swift in Sources */,
