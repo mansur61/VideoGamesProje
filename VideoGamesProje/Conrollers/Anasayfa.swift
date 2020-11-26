@@ -85,7 +85,7 @@ extension Anasayfa:UICollectionViewDelegate{
         
          let index = 0//indexPath.row
         
-        vc!.name=imageCell[index]
+        vc!.nameImage=String(describing: imageCell[index] )  
         vc!.gameNameDetayGetir="mansur"
         vc!.rele_Met = "s"
         vc!.aciklama = "78"

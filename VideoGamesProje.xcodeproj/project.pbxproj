@@ -24,6 +24,7 @@
 		335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EF256D98E200371950 /* GetGameListSource.swift */; };
 		335F38F6256D98E300371950 /* getGameDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38F1256D98E300371950 /* getGameDetailsInfo.swift */; };
 		33C4A1A6256FC6F000FC48F6 /* FavoriViewCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4A1A5256FC6F000FC48F6 /* FavoriViewCellCollection.swift */; };
+		33C4A1A825701F3200FC48F6 /* FavorilerConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */; };
 		D0AD8D67FBE68079C0B44611 /* Pods_VideoGamesProjeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */; };
 		E610927A9EB043F59D6E7755 /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41E36B139EF41926F28653F /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework */; };
 		EECE2807CCB0661394263D23 /* Pods_VideoGamesProje.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B73A29A650EA88E65565A9 /* Pods_VideoGamesProje.framework */; };
@@ -70,6 +71,7 @@
 		335F38EF256D98E200371950 /* GetGameListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameListSource.swift; sourceTree = "<group>"; };
 		335F38F1256D98E300371950 /* getGameDetailsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getGameDetailsInfo.swift; sourceTree = "<group>"; };
 		33C4A1A5256FC6F000FC48F6 /* FavoriViewCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriViewCellCollection.swift; path = VideoGamesProje/Conrollers/FavoriViewCellCollection.swift; sourceTree = SOURCE_ROOT; };
+		33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorilerConroller.swift; sourceTree = "<group>"; };
 		37FB5AC8F64B18A142E6980B /* Pods-VideoGamesProje.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGamesProje.release.xcconfig"; path = "Target Support Files/Pods-VideoGamesProje/Pods-VideoGamesProje.release.xcconfig"; sourceTree = "<group>"; };
 		47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoGamesProjeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528BF8C804F844A81B05CA23 /* Pods-VideoGamesProjeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGamesProjeTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoGamesProjeTests/Pods-VideoGamesProjeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				335F38BE256D951B00371950 /* Anasayfa.swift */,
 				33141495256F92CF00398391 /* GameDetailController.swift */,
+				33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */,
 			);
 			path = Conrollers;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				335F38F2256D98E300371950 /* GetGameDetailsSource.swift in Sources */,
 				335F38F3256D98E300371950 /* GetGameListInfo.swift in Sources */,
 				335F38BD256D951B00371950 /* SceneDelegate.swift in Sources */,
+				33C4A1A825701F3200FC48F6 /* FavorilerConroller.swift in Sources */,
 				335F38F6256D98E300371950 /* getGameDetailsInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
