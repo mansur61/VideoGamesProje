@@ -9,11 +9,11 @@
 import Foundation
 import  Alamofire
 protocol GetGameDetailsDelegate {
-    func getGameDetailsState(getGameDetails: [getGameDetailsInfo])
+    func getGameDetailsState(getGameDetails: getGameDetailsInfo)
 }
 
 extension GetGameDetailsDelegate{
-     func getGameDetailsState(getGameDetails: [getGameDetailsInfo]){}
+     func getGameDetailsState(getGameDetails: getGameDetailsInfo){}
 }
 
 class  GetGameDetailsSource: NSObject {
@@ -28,9 +28,10 @@ class  GetGameDetailsSource: NSObject {
     
     
     func getGameDetails(ismeGoreGetir:String){
-        
+        print(self.baseUrl+ismeGoreGetir)
         let params = ["game_pk":"\(ismeGoreGetir)"]
-        
+        print(params["game_pk"]!)
+        /*
         AF.request(self.baseUrl+ismeGoreGetir,method: .get,parameters: params,encoding: URLEncoding.default,headers: nil,interceptor: nil).response { (responseData) in
            print("We got the response")
            print(responseData.result)
@@ -38,14 +39,14 @@ class  GetGameDetailsSource: NSObject {
       
           do{
             let getPosts = try JSONDecoder().decode(getGameDetailsInfo.self, from: data)
-            self.delegate?.getGameDetailsState(getGameDetails: [getPosts])
+            self.delegate?.getGameDetailsState(getGameDetails: getPosts)
         
           }catch{
             print("Api verileri ile uyuşmazlık olmuş olabilir..")
           }
        
        }
-               
+         */
            
     }
     

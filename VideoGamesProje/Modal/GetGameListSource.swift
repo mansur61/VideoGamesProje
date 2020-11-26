@@ -10,11 +10,11 @@ import Foundation
 import  Alamofire
 
 protocol GetGameListDelegate {
-    func getGameListState(getGameList: [getGameListInfo])
+    func getGameListState(getGameList: getGameListInfo)
 }
 
 extension GetGameListDelegate{
-    func getGameListState(getGameList: [getGameListInfo]){}
+    func getGameListState(getGameList: getGameListInfo){}
 }
 
 class  GetGameListSource: NSObject {
@@ -41,11 +41,10 @@ class  GetGameListSource: NSObject {
                do{
                    
                    let getPosts = try JSONDecoder().decode(getGameListInfo.self, from: data)
-                   //if getPosts.count != 0 {
-                //print("getPostsUzunluk :>" ,getPosts.seo_title!)
-                    self.delegate?.getGameListState(getGameList: [getPosts])
-                   //}
-       
+                    print("ula veriii :",getPosts.results.count)
+                 
+                    self.delegate?.getGameListState(getGameList: getPosts)
+            
                }catch{
                 print("Api verileri ile uyuşmazlık olmuş olabilir..")
                }

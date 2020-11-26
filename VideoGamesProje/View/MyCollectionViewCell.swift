@@ -14,12 +14,13 @@ class MyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gameAd: UILabel!
     @IBOutlet weak var rating_released: UILabel!
     
-    /*
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+    /*
     public func configure(with image:UIImage){
         imageView.image=image
     }

@@ -12,13 +12,15 @@ import UIKit
 
 class Anasayfa: UIViewController,GetGameListDelegate {
 
-    var getGameListArray:[getGameListInfo] = []
+    var getGameListArray:getGameListInfo?
     var dataSource = GetGameListSource(baseUrl: "https://api.rawg.io/api/")
        
-    let data=["mansur","yunus","ali","veli","araba","filiz","celil"]
+    var data=["mansur","yunus","ali","veli","araba","filiz","celil"]
     var filterData: [String]!
     
     let imageResim = ["kalp.png","kus.png"]
+    var imageCell: [String] = []
+    
     
     
     @IBOutlet weak var collection: UICollectionView!
@@ -31,7 +33,7 @@ class Anasayfa: UIViewController,GetGameListDelegate {
         super.viewDidLoad()
 
         filterData=data
-       // print("HELLOOOOOOOO")
+       
         dataSource.delegate = self
         
         searchBar.delegate = self
@@ -51,24 +53,25 @@ class Anasayfa: UIViewController,GetGameListDelegate {
             scrollView.addSubview(imageView)
             
         }
-        
-        
-        
-        // Do any additional setup after loading the view.
     }
     
-     func getGameListState(getGameList: [getGameListInfo]) {
-       
+     func getGameListState(getGameList: getGameListInfo) {
+      
         self.getGameListArray=getGameList
-       // print("getGameListArray :>" ,getGameListArray[0].seo_title!)
-       // print("ilgili resim->",self.getGameListArray[0].results[0].background_image!)
+        
+        let bak = self.getGameListArray!.results.count
+        print("bak:",bak)
+        for i in 0..<bak {
+            self.imageCell.append(self.getGameListArray!.results[i].background_image!)
+           // print("\(self.getGameListArray.results[i].background_image!)")
+        }
+        print("imageCell getGameListState .jpg \(self.imageCell.count)")
+        
         DispatchQueue.main.async {
             self.collection.reloadData()
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-       // print("geldiii")
-        
         dataSource.getGameList(ismeGoreGeetir: "games?page=2")
     }
 
@@ -80,6 +83,18 @@ extension Anasayfa:UICollectionViewDelegate{
         //print("You tapped me")
         let vc = storyboard?.instantiateViewController(identifier: "gameDetail") as? GameDetailController
         
+         let index = 0//indexPath.row
+        
+        vc!.name=imageCell[index]
+        vc!.gameNameDetayGetir="mansur"
+        vc!.rele_Met = "s"
+        vc!.aciklama = "78"
+        /*
+         vc!.gameNameDetay.text = self.getGameListArray!.results[index].name!
+         vc!.gameDescription!.text = self.getGameListArray!.description!
+         vc!.imageDetay.image = UIImage(named: "\(self.imageCell[index])")
+         */
+        
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
@@ -87,43 +102,30 @@ extension Anasayfa:UICollectionViewDelegate{
 extension Anasayfa:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filterData.count//data.count
+        return filterData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCollectionViewCell
+        
         let index = indexPath.row
-       
         cell.gameAd.text = self.filterData[index]
         cell.rating_released.text = " \(String(describing: self.filterData[index])) -  \(String(describing: self.filterData[index]))"
         
-        /*
-        if self.getGameListArray.count != 0 {
-            cell.gameAd.text = self.getGameListArray[index].seo_title!
-            cell.rating_released.text = " \(String(describing: self.getGameListArray[index].results[index].rating!)) -  \(String(describing: self.getGameListArray[index].results[index].released!))"
-            
-            // resim getirmede sıkıntı var bakılacak
-            cell.resim.image = UIImage(contentsOfFile: "\(self.getGameListArray[index].results[index].background_image!)")
-                //UIImage(systemName: "\(String(describing: ))", withConfiguration: nil)
-                
-            return cell
-        }else{
-            return cell
-        }
-        */
+        //cell.resim.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: (self.getGameListArray.results[index].background_image!))!))
+      
         return cell
     }
-    
-    
 }
+
 // search bar veri ve filtreleme ile alaklaı kısım
 extension Anasayfa: UISearchBarDelegate{
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         filterData = []
         if searchText != "" && searchText.count >= 3{ // unit teste sok..
-            for ad in data {
+            for ad in data{
                 if ad.lowercased().contains(searchText.lowercased()) {
                     filterData.append(ad)
                 }

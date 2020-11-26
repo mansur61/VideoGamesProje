@@ -10,19 +10,19 @@ import Foundation
 
 struct getGameListInfo: Decodable {
     
-    let count:Int?
-    let next:String?
-   // let previous:String?
-    let results:[ArrayResults]
-    let seo_title:String?
-    let seo_description:String?
-    let seo_keywords:String?
-    let seo_h1:String?
-    let noindex:Bool?
-    let nofollow:Bool?
-    let description:String?
-    //let filters:Filters?
-   // let nofollow_collections:NoFollowCollection?
+    var count:Int?
+    var next:String?
+   // var previous:String?
+    var results:[ArrayResults]
+    var seo_title:String?
+    var seo_description:String?
+    var seo_keywords:String?
+    var seo_h1:String?
+    var noindex:Bool?
+    var nofollow:Bool?
+    var description:String?
+    //var filters:Filters?
+   // var nofollow_collections:NoFollowCollection?
     
     enum CodingKeys: String, CodingKey {
         case count = "count"
@@ -43,17 +43,17 @@ struct getGameListInfo: Decodable {
 }
 /*
 struct Filters:Decodable {
-    let years:[Yillar]
+    var years:[Yillar]
     
     enum CodingKeys: String, CodingKey {
         case years = "years"
     }
 }
 struct Yillar:Decodable {
-    let from:Int?
-    let to:Int?
-    let filter:String?
-    let years:Yillar_Years?
+    var from:Int?
+    var to:Int?
+    var filter:String?
+    var years:Yillar_Years?
     
     enum CodingKeys: String, CodingKey {
         case from = "from"
@@ -63,9 +63,9 @@ struct Yillar:Decodable {
     }
 }
 struct Yillar_Years:Decodable {
-    let year:Int?
-    let count:Int?
-    let nofollow:Bool?
+    var year:Int?
+    var count:Int?
+    var nofollow:Bool?
     
     enum CodingKeys: String, CodingKey {
         case year = "year"
@@ -75,33 +75,33 @@ struct Yillar_Years:Decodable {
 }
  */
 struct ArrayResults: Decodable {
-    let id:Int?
-    let slug:String?
-    let name:String?
-    let released:String?
-    let tba:Bool?
-    let background_image:String?
-    let rating:Float?
-    let rating_top:Int?
-    //let ratigns:[ArrayRatings] // result içinde, Bunu çalıştıramdık, bakılacak tekrar
-    let ratings_count:Int?
-    let reviews_text_count:Int?
-    let added:Int?
-    let added_by_status:AddedStatus?  //result içinde
-    let metacritic:Int?
-    let playtime:Int?
-    let suggestions_count:Int?
-    //let user_game:String? null olacak
-    let reviews_count:Int?
-    let saturated_color:String?
-    let dominant_color:String?
-    //let platforms:[Platforms] //result içinde, Bunu düzelteceğiz
-    let parent_platforms:[ParentPlatform]
-    let genres:[Genres]
-    let stores:[Stores]
-    let clip:Clip?
-   let tags:[Tags]
-    let short_screenshots:[ShortScreen]
+    var id:Int?
+    var slug:String?
+    var name:String?
+    var released:String?
+    var tba:Bool?
+    var background_image:String?
+    var rating:Float?
+    var rating_top:Int?
+    //var ratigns:[ArrayRatings] // result içinde, Bunu çalıştıramdık, bakılacak tekrar
+    var ratings_count:Int?
+    var reviews_text_count:Int?
+    var added:Int?
+    var added_by_status:AddedStatus?  //result içinde
+    var metacritic:Int?
+    var playtime:Int?
+    var suggestions_count:Int?
+    //var user_game:String? null olacak
+    var reviews_count:Int?
+    var saturated_color:String?
+    var dominant_color:String?
+    //var platforms:[Platforms] //result içinde, Bunu düzelteceğiz
+    var parent_platforms:[ParentPlatform]
+    var genres:[Genres]
+    var stores:[Stores]
+    var clip:Clip?
+   var tags:[Tags]
+    var short_screenshots:[ShortScreen]
     
     
     enum CodingKeys: String, CodingKey {
@@ -138,8 +138,8 @@ struct ArrayResults: Decodable {
 }
 
 struct ShortScreen:Decodable {
-    let id:Int?
-    let image:String?
+    var id:Int?
+    var image:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -149,12 +149,12 @@ struct ShortScreen:Decodable {
 }
 
 struct Tags:Decodable {
-    let id:Int?
-    let name:String?
-    let slug:String?
-    let language:String?
-    let games_count:Int?
-    let image_background:String?
+    var id:Int?
+    var name:String?
+    var slug:String?
+    var language:String?
+    var games_count:Int?
+    var image_background:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -167,9 +167,9 @@ struct Tags:Decodable {
 }
 
 struct Clip:Decodable {
-     //let clips:Clips?
-    let video:String?
-    let preview:String?
+     //var clips:Clips?
+    var video:String?
+    var preview:String?
     enum CodingKeys: String, CodingKey {
         //case clips = "clips"
         case video = "video"
@@ -184,10 +184,10 @@ struct Clips:Decodable {
  */
    
 struct Stores:Decodable {
-    let id:Int?
-    //let store:Store? // Burda bir sıkıntı oldu,düzeltilecek
-    let url_en:String?
-    //let url_ru:String? null
+    var id:Int?
+    //var store:Store? // Burda bir sıkıntı oldu,düzeltilecek
+    var url_en:String?
+    //var url_ru:String? null
     enum CodingKeys: String, CodingKey {
         case id = "id"
        // case store = "store"
@@ -197,12 +197,12 @@ struct Stores:Decodable {
 }
 /*
 struct Store:Decodable {
-    let id:Int?
-    let name:String?
-    let slug:String?
-    let domain:String?
-    let games_count:String?
-    let image_background:String?
+    var id:Int?
+    var name:String?
+    var slug:String?
+    var domain:String?
+    var games_count:String?
+    var image_background:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -216,11 +216,11 @@ struct Store:Decodable {
  */
 
 struct Genres:Decodable {
-    let id:Int?
-    let name:String?
-    let slug:String?
-    let games_count:Int?
-    let image_background:String?
+    var id:Int?
+    var name:String?
+    var slug:String?
+    var games_count:Int?
+    var image_background:String?
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -232,7 +232,7 @@ struct Genres:Decodable {
 }
  
 struct ParentPlatform:Decodable {
-    let platform:ParentPlatform_Platform?
+    var platform:ParentPlatform_Platform?
     enum CodingKeys: String, CodingKey {
         case platform = "platform"
         
@@ -240,9 +240,9 @@ struct ParentPlatform:Decodable {
 }
 
 struct ParentPlatform_Platform:Decodable {
-    let id:Int?
-    let name:String?
-    let slug:String?
+    var id:Int?
+    var name:String?
+    var slug:String?
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case name = "name"
@@ -251,10 +251,10 @@ struct ParentPlatform_Platform:Decodable {
 }
 /*
 struct Platforms:Decodable {
-    let platform:Platfrom?
-    let released_at:String?
-   // let requirements_en:Requirements?
-   // let requirements_ru:String? null bir değer
+    var platform:Platfrom?
+    var released_at:String?
+   // var requirements_en:Requirements?
+   // var requirements_ru:String? null bir değer
     enum CodingKeys: String, CodingKey {
         case platform = "platform"
         case released_at = "released_at"
@@ -265,8 +265,8 @@ struct Platforms:Decodable {
  */
 /*
 struct Requirements:Decodable {
-    let minimum:String?
-    let recommended:String?
+    var minimum:String?
+    var recommended:String?
    
     enum CodingKeys: String, CodingKey {
         case minimum = "minimum"
@@ -275,14 +275,14 @@ struct Requirements:Decodable {
 }*/
 /*
 struct Platfrom: Decodable{
-      let id:Int?
-       let name:String?
-       let slug:String?
-       let image:String?
-       let year_end:String?
-       let year_start:String?
-        let games_count:Int?
-       let image_background:String?
+      var id:Int?
+       var name:String?
+       var slug:String?
+       var image:String?
+       var year_end:String?
+       var year_start:String?
+        var games_count:Int?
+       var image_background:String?
        
        enum CodingKeys: String, CodingKey {
            case id = "id"
@@ -297,12 +297,12 @@ struct Platfrom: Decodable{
 }
  */
 struct AddedStatus:Decodable {
-    let yet:Int?
-    let owned:Int?
-    let beaten:Int?
-    let toplay:Int?
-    let dropped:Int?
-    let playing:Int?
+    var yet:Int?
+    var owned:Int?
+    var beaten:Int?
+    var toplay:Int?
+    var dropped:Int?
+    var playing:Int?
     
     enum CodingKeys: String, CodingKey {
         case yet = "yet"
@@ -315,10 +315,10 @@ struct AddedStatus:Decodable {
 }
  /*
 struct ArrayRatings:Decodable {
-    let id:Int?
-    let title:String?
-    let count:Int?
-    let percent:Double?
+    var id:Int?
+    var title:String?
+    var count:Int?
+    var percent:Double?
     
     
     enum CodingKeys: String, CodingKey {
@@ -332,7 +332,7 @@ struct ArrayRatings:Decodable {
  */
 /*
 struct NoFollowCollection:Decodable {
-    let stores:String?
+    var stores:String?
     
     enum CodingKeys: String, CodingKey {
         case stores = "stores"
