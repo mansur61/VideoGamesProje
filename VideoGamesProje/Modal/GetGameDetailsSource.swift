@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import  Alamofire
 protocol GetGameDetailsDelegate {
     func getGameDetailsState(getGameDetails: [getGameDetailsInfo])
 }
@@ -18,9 +18,35 @@ extension GetGameDetailsDelegate{
 
 class  GetGameDetailsSource: NSObject {
     
-     var delegete : GetGameDetailsDelegate?
+    var delegate : GetGameDetailsDelegate?
+    
+    fileprivate var baseUrl = ""
+    
+    init(baseUrl:String) {
+        self.baseUrl = baseUrl
+    }
+    
+    
     func getGameDetails(ismeGoreGetir:String){
         
+        let params = ["game_pk":"\(ismeGoreGetir)"]
+        
+        AF.request(self.baseUrl+ismeGoreGetir,method: .get,parameters: params,encoding: URLEncoding.default,headers: nil,interceptor: nil).response { (responseData) in
+           print("We got the response")
+           print(responseData.result)
+           guard let data = responseData.data else{return}
+      
+          do{
+            let getPosts = try JSONDecoder().decode(getGameDetailsInfo.self, from: data)
+            self.delegate?.getGameDetailsState(getGameDetails: [getPosts])
+        
+          }catch{
+            print("Api verileri ile uyuşmazlık olmuş olabilir..")
+          }
+       
+       }
+               
+           
     }
     
 }

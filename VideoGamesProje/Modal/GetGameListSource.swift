@@ -19,7 +19,7 @@ extension GetGameListDelegate{
 
 class  GetGameListSource: NSObject {
     
-    var delegete:GetGameListDelegate?
+    var delegate:GetGameListDelegate?
     fileprivate var baseUrl = ""
     
     init(baseUrl:String) {
@@ -43,7 +43,7 @@ class  GetGameListSource: NSObject {
                    let getPosts = try JSONDecoder().decode(getGameListInfo.self, from: data)
                    //if getPosts.count != 0 {
                 //print("getPostsUzunluk :>" ,getPosts.seo_title!)
-                    self.delegete?.getGameListState(getGameList: [getPosts])
+                    self.delegate?.getGameListState(getGameList: [getPosts])
                    //}
        
                }catch{

@@ -18,8 +18,14 @@ class Anasayfa: UIViewController,GetGameListDelegate {
     let data=["mansur","yunus","ali","veli","araba","filiz","celil"]
     var filterData: [String]!
     
+    let imageResim = ["kalp.png","kus.png"]
+    
+    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var pageControl: UIPageControl!
+     @IBOutlet weak var scrollView: UIScrollView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +35,23 @@ class Anasayfa: UIViewController,GetGameListDelegate {
         dataSource.delegate = self
         
         searchBar.delegate = self
-        
+        scrollView.delegate = self
         collection.delegate = self
         collection.dataSource = self
+        
+        pageControl.numberOfPages = imageResim.count
+        
+        for i in 0..<imageResim.count{
+            let imageView = UIImageView()
+            imageView.contentMode = .scaleToFill
+            imageView.image = UIImage(named: imageResim[i])
+            let xPos = CGFloat(i)*self.view.bounds.size.width
+            imageView.frame = CGRect(x:xPos,y:0,width:view.frame.size.width,height:scrollView.frame.size.height)
+            scrollView.contentSize.width = view.frame.width*CGFloat(i+1)
+            scrollView.addSubview(imageView)
+            
+        }
+        
         
         
         // Do any additional setup after loading the view.
@@ -48,6 +68,7 @@ class Anasayfa: UIViewController,GetGameListDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
        // print("geldiii")
+        
         dataSource.getGameList(ismeGoreGeetir: "games?page=2")
     }
 
@@ -56,7 +77,11 @@ extension Anasayfa:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("You tapped me")
+        //print("You tapped me")
+        let vc = storyboard?.instantiateViewController(identifier: "gameDetail") as? GameDetailController
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
 }
 extension Anasayfa:UICollectionViewDataSource{
@@ -112,4 +137,12 @@ extension Anasayfa: UISearchBarDelegate{
         self.collection.reloadData()
     }
     
+}
+// page view kısmı
+extension Anasayfa: UIScrollViewDelegate{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView){
+        let page = scrollView.contentOffset.x/scrollView.frame.width
+        pageControl.currentPage = Int(page)
+    }
 }
