@@ -20,14 +20,13 @@
 		335F38F3256D98E300371950 /* GetGameListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EE256D98E200371950 /* GetGameListInfo.swift */; };
 		335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EF256D98E200371950 /* GetGameListSource.swift */; };
 		335F38F6256D98E300371950 /* getGameDetailsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38F1256D98E300371950 /* getGameDetailsInfo.swift */; };
+		3395AC0B25718F1C00C56801 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3395AC0A25718F1C00C56801 /* VideoGamesProjeTests.swift */; };
 		33C4A1A6256FC6F000FC48F6 /* FavoriViewCellCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4A1A5256FC6F000FC48F6 /* FavoriViewCellCollection.swift */; };
 		33C4A1A825701F3200FC48F6 /* FavorilerConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */; };
 		33D1521F25705BAA00350448 /* SiliderPagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1521E25705BAA00350448 /* SiliderPagesData.swift */; };
 		33D8BD2925716C940075B691 /* begeni.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D8BD2825716C940075B691 /* begeni.png */; };
 		33D8BD2B25717DFA0075B691 /* SearchBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8BD2A25717DFA0075B691 /* SearchBarTest.swift */; };
 		33D8BD2D25718A260075B691 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D8BD2C25718A260075B691 /* pikachu.png */; };
-		33D8BD2E25718B550075B691 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */; };
-		33D8BD3125718C0C0075B691 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */; };
 		D0AD8D67FBE68079C0B44611 /* Pods_VideoGamesProjeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */; };
 		E610927A9EB043F59D6E7755 /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41E36B139EF41926F28653F /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework */; };
 		EECE2807CCB0661394263D23 /* Pods_VideoGamesProje.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B73A29A650EA88E65565A9 /* Pods_VideoGamesProje.framework */; };
@@ -62,7 +61,6 @@
 		335F38C6256D951E00371950 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		335F38C8256D951E00371950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335F38CD256D951E00371950 /* VideoGamesProjeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoGamesProjeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesProjeTests.swift; sourceTree = "<group>"; };
 		335F38D3256D951E00371950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335F38D8256D951E00371950 /* VideoGamesProjeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoGamesProjeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		335F38DC256D951E00371950 /* VideoGamesProjeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesProjeUITests.swift; sourceTree = "<group>"; };
@@ -71,6 +69,7 @@
 		335F38EE256D98E200371950 /* GetGameListInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameListInfo.swift; sourceTree = "<group>"; };
 		335F38EF256D98E200371950 /* GetGameListSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGameListSource.swift; sourceTree = "<group>"; };
 		335F38F1256D98E300371950 /* getGameDetailsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getGameDetailsInfo.swift; sourceTree = "<group>"; };
+		3395AC0A25718F1C00C56801 /* VideoGamesProjeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoGamesProjeTests.swift; sourceTree = "<group>"; };
 		33C4A1A5256FC6F000FC48F6 /* FavoriViewCellCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriViewCellCollection.swift; path = VideoGamesProje/Conrollers/FavoriViewCellCollection.swift; sourceTree = SOURCE_ROOT; };
 		33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorilerConroller.swift; sourceTree = "<group>"; };
 		33D1521E25705BAA00350448 /* SiliderPagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SiliderPagesData.swift; path = VideoGamesProje/Conrollers/SiliderPagesData.swift; sourceTree = SOURCE_ROOT; };
@@ -159,9 +158,9 @@
 		335F38D0256D951E00371950 /* VideoGamesProjeTests */ = {
 			isa = PBXGroup;
 			children = (
-				335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */,
 				335F38D3256D951E00371950 /* Info.plist */,
 				33D8BD2A25717DFA0075B691 /* SearchBarTest.swift */,
+				3395AC0A25718F1C00C56801 /* VideoGamesProjeTests.swift */,
 			);
 			path = VideoGamesProjeTests;
 			sourceTree = "<group>";
@@ -471,7 +470,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D8BD2E25718B550075B691 /* VideoGamesProjeTests.swift in Sources */,
 				335F38BF256D951B00371950 /* Anasayfa.swift in Sources */,
 				33D1521F25705BAA00350448 /* SiliderPagesData.swift in Sources */,
 				335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */,
@@ -491,7 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D8BD3125718C0C0075B691 /* VideoGamesProjeTests.swift in Sources */,
+				3395AC0B25718F1C00C56801 /* VideoGamesProjeTests.swift in Sources */,
 				33D8BD2B25717DFA0075B691 /* SearchBarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
