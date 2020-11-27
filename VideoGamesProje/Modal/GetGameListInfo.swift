@@ -80,7 +80,7 @@ struct ArrayResults: Decodable {
     var name:String?
     var released:String?
     var tba:Bool?
-    var background_image:String?
+    var background_image:String
     var rating:Float?
     var rating_top:Int?
     //var ratigns:[ArrayRatings] // result içinde, Bunu çalıştıramdık, bakılacak tekrar

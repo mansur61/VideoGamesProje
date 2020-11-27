@@ -29,7 +29,7 @@ class GameDetailController: UIViewController,GetGameDetailsDelegate {
         print("Anasayfadan geldim name ->\(nameImage) ")
         super.viewDidLoad()
 
-        imageDetay.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: (nameImage))!))
+       // imageDetay.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: (nameImage))!))
         gameNameDetay?.text! = gameNameDetayGetir
         released_metacriticRate?.text! = rele_Met
         gameDescription?.text! = aciklama

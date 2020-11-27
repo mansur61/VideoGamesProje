@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+import  Foundation
 
 class Anasayfa: UIViewController,GetGameListDelegate {
 
@@ -17,6 +17,8 @@ class Anasayfa: UIViewController,GetGameListDelegate {
        
     var data=["",""]
     var dataVeri:[String] = []
+    
+    var veriJSON : [String:Any] = [:]
     
     var filterData: [String]!
 
@@ -49,17 +51,28 @@ class Anasayfa: UIViewController,GetGameListDelegate {
         let bak = self.getGameListArray!.results.count
        
         for i in 0..<bak {
-            self.imageCell.append(self.getGameListArray!.results[i].background_image!)
+            self.imageCell.append(self.getGameListArray!.results[i].background_image)
             self.dataVeri.append(self.getGameListArray!.results[i].name!)
         }
-        
+       
         filterData = self.dataVeri
+        
+        for item in 0..<self.dataVeri.count {
+            if self.dataVeri[item] == self.getGameListArray!.results[item].name!{
+                       
+             veriJSON = ["released":"\(self.getGameListArray!.results[item].released!)",
+                  "rating":"\(self.getGameListArray!.results[item].rating!)",
+                  "background_image":"\(self.getGameListArray!.results[item].background_image)"]
+           // print("background_image: ",veriJSON["background_image"]!)
+              }
+          }
+        print("veriJSON: ",veriJSON)
         
         //silider.siliderPages(resimler: self.imageCell,scrollView: self.scrollView,pageControl: self.pageControl)
         
-        DispatchQueue.main.async {
-            self.collection.reloadData()
-        }
+            DispatchQueue.main.async {
+                self.collection.reloadData()
+            }
     }
     
  
@@ -76,17 +89,12 @@ extension Anasayfa:UICollectionViewDelegate{
         
         let vc = storyboard?.instantiateViewController(identifier: "gameDetail") as? GameDetailController
         
-         let index = 0//indexPath.row
         
-        vc!.nameImage=String(describing: imageCell[index] )  
-        vc!.gameNameDetayGetir="mansur"
-        vc!.rele_Met = "s"
-        vc!.aciklama = "78"
-        /*
-         vc!.gameNameDetay.text = self.getGameListArray!.results[index].name!
-         vc!.gameDescription!.text = self.getGameListArray!.description!
-         vc!.imageDetay.image = UIImage(named: "\(self.imageCell[index])")
-         */
+        vc!.nameImage = self.getGameListArray!.results[indexPath.row].background_image
+        vc!.gameNameDetayGetir = self.getGameListArray!.results[indexPath.row].name!
+        vc!.rele_Met = String(describing: self.getGameListArray!.results[indexPath.row].released! + "-" + String(describing: self.getGameListArray!.results[indexPath.row].metacritic!) )
+        vc!.aciklama = self.getGameListArray!.description!
+        
         
         self.navigationController?.pushViewController(vc!, animated: true)
         
@@ -95,20 +103,23 @@ extension Anasayfa:UICollectionViewDelegate{
 extension Anasayfa:UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         print("filterData ,",filterData.count)
         return filterData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       
+  
         let cell = collection.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCollectionViewCell
-        
-        let index = indexPath.row
-        
-        cell.gameAd.text = self.filterData[index]
-        cell.rating_released.text = " \(String(describing: self.filterData[index])) -  \(String(describing: self.filterData[index]))"
-       // cell.resim.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: (imageCell[index]))!))
-      
+
+        cell.gameAd.text! = String(describing: self.getGameListArray?.results[indexPath.row].name!)
+        cell.rating_released.text = String(describing: self.getGameListArray!.results[indexPath.row].released! + "-" + String(describing: self.getGameListArray!.results[indexPath.row].rating!) )
+        cell.resim.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: self.getGameListArray!.results[indexPath.row].background_image )!))
+        /*
+        DispatchQueue.main.async {
+          cell.resim.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: "https://media.rawg.io/media/games/b7b/b7b8381707152afc7d91f5d95de70e39.jpg" )!))
+        }
+        */
         return cell
     }
 }
@@ -123,17 +134,14 @@ extension Anasayfa: UISearchBarDelegate {
             for ad in dataVeri{
                 if ad.lowercased().contains(searchText.lowercased()) {
                     filterData.append(ad)
-                    
                 }
             }
             if filterData.count == 0 {
                 
                 self.collection.isHidden = true
                 self.uyariLabel.isHidden = false
-                
             }
-                
-            
+        
         }else{
             
             filterData=dataVeri
