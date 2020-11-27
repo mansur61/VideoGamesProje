@@ -11,26 +11,27 @@ import UIKit
 var favList:[String:String] = [:]
 
 class GameDetailController: UIViewController,GetGameDetailsDelegate {
-
+    
+    //Views
     @IBOutlet weak var imageDetay: UIImageView!
     @IBOutlet weak var gameNameDetay: UILabel!
     @IBOutlet weak var released_metacriticRate: UILabel!
     @IBOutlet weak var gameDescription: UITextView!
     
+    // Modals
     var detailsSource = GetGameDetailsSource(baseUrl: "https://api.rawg.io/api/")
     var nameImage=""
     var gameNameDetayGetir = ""
     var rele_Met = ""
     var aciklama = ""
-    
     var getGameDetailsArray:getGameDetailsInfo!
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         detailsSource.delegate=self
-        
-        //print("nameImage:\(nameImage) -> gameNameDetayGetir: \(gameNameDetayGetir) -> released :\(rele_Met) -> resim: \(aciklama)")
-        
+    
         if URL(string: (nameImage)) != nil {
             self.imageDetay?.image =  UIImage.init(data: try! Data.init(contentsOf: URL(string: (nameImage))!))
                
@@ -53,8 +54,7 @@ class GameDetailController: UIViewController,GetGameDetailsDelegate {
     
     
     @IBAction func foveriButton(_ sender: Any) {
-        print("Fav Button Tılanıldı")
-        //print(self.getGameDetailsArray as? Any)
+       
         let params = [
             "iamgeUrl":"\(nameImage)",
             "oyunAdi":"\(gameNameDetayGetir)",
@@ -63,10 +63,10 @@ class GameDetailController: UIViewController,GetGameDetailsDelegate {
         ]
         
         favList = params
-        //print("favList: ",favList)
+        
         //alertMesaj(mesaj:"Favorilerde Gör")
       
-            self.performSegue(withIdentifier: "detayAktar", sender: nil)
+        self.performSegue(withIdentifier: "detayAktar", sender: nil)
        
     }
     

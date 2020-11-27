@@ -15,7 +15,6 @@
 		335F38C2256D951B00371950 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335F38C0256D951B00371950 /* Main.storyboard */; };
 		335F38C4256D951E00371950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335F38C3256D951E00371950 /* Assets.xcassets */; };
 		335F38C7256D951E00371950 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335F38C5256D951E00371950 /* LaunchScreen.storyboard */; };
-		335F38D2256D951E00371950 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */; };
 		335F38DD256D951E00371950 /* VideoGamesProjeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38DC256D951E00371950 /* VideoGamesProjeUITests.swift */; };
 		335F38F2256D98E300371950 /* GetGameDetailsSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38ED256D98E200371950 /* GetGameDetailsSource.swift */; };
 		335F38F3256D98E300371950 /* GetGameListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38EE256D98E200371950 /* GetGameListInfo.swift */; };
@@ -25,6 +24,10 @@
 		33C4A1A825701F3200FC48F6 /* FavorilerConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */; };
 		33D1521F25705BAA00350448 /* SiliderPagesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D1521E25705BAA00350448 /* SiliderPagesData.swift */; };
 		33D8BD2925716C940075B691 /* begeni.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D8BD2825716C940075B691 /* begeni.png */; };
+		33D8BD2B25717DFA0075B691 /* SearchBarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D8BD2A25717DFA0075B691 /* SearchBarTest.swift */; };
+		33D8BD2D25718A260075B691 /* pikachu.png in Resources */ = {isa = PBXBuildFile; fileRef = 33D8BD2C25718A260075B691 /* pikachu.png */; };
+		33D8BD2E25718B550075B691 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */; };
+		33D8BD3125718C0C0075B691 /* VideoGamesProjeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */; };
 		D0AD8D67FBE68079C0B44611 /* Pods_VideoGamesProjeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */; };
 		E610927A9EB043F59D6E7755 /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A41E36B139EF41926F28653F /* Pods_VideoGamesProje_VideoGamesProjeUITests.framework */; };
 		EECE2807CCB0661394263D23 /* Pods_VideoGamesProje.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B73A29A650EA88E65565A9 /* Pods_VideoGamesProje.framework */; };
@@ -72,6 +75,8 @@
 		33C4A1A725701F3200FC48F6 /* FavorilerConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorilerConroller.swift; sourceTree = "<group>"; };
 		33D1521E25705BAA00350448 /* SiliderPagesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SiliderPagesData.swift; path = VideoGamesProje/Conrollers/SiliderPagesData.swift; sourceTree = SOURCE_ROOT; };
 		33D8BD2825716C940075B691 /* begeni.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = begeni.png; sourceTree = "<group>"; };
+		33D8BD2A25717DFA0075B691 /* SearchBarTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTest.swift; sourceTree = "<group>"; };
+		33D8BD2C25718A260075B691 /* pikachu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pikachu.png; sourceTree = "<group>"; };
 		37FB5AC8F64B18A142E6980B /* Pods-VideoGamesProje.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGamesProje.release.xcconfig"; path = "Target Support Files/Pods-VideoGamesProje/Pods-VideoGamesProje.release.xcconfig"; sourceTree = "<group>"; };
 		47403DAF966F957EDA94E7D0 /* Pods_VideoGamesProjeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoGamesProjeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		528BF8C804F844A81B05CA23 /* Pods-VideoGamesProjeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoGamesProjeTests.debug.xcconfig"; path = "Target Support Files/Pods-VideoGamesProjeTests/Pods-VideoGamesProjeTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				33D8BD2825716C940075B691 /* begeni.png */,
+				33D8BD2C25718A260075B691 /* pikachu.png */,
 				335F38EC256D98B200371950 /* Conrollers */,
 				335F38EB256D98A700371950 /* View */,
 				335F38EA256D989700371950 /* Modal */,
@@ -155,6 +161,7 @@
 			children = (
 				335F38D1256D951E00371950 /* VideoGamesProjeTests.swift */,
 				335F38D3256D951E00371950 /* Info.plist */,
+				33D8BD2A25717DFA0075B691 /* SearchBarTest.swift */,
 			);
 			path = VideoGamesProjeTests;
 			sourceTree = "<group>";
@@ -336,6 +343,7 @@
 				335F38C4256D951E00371950 /* Assets.xcassets in Resources */,
 				335F38C2256D951B00371950 /* Main.storyboard in Resources */,
 				33D8BD2925716C940075B691 /* begeni.png in Resources */,
+				33D8BD2D25718A260075B691 /* pikachu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D8BD2E25718B550075B691 /* VideoGamesProjeTests.swift in Sources */,
 				335F38BF256D951B00371950 /* Anasayfa.swift in Sources */,
 				33D1521F25705BAA00350448 /* SiliderPagesData.swift in Sources */,
 				335F38F4256D98E300371950 /* GetGameListSource.swift in Sources */,
@@ -482,7 +491,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335F38D2256D951E00371950 /* VideoGamesProjeTests.swift in Sources */,
+				33D8BD3125718C0C0075B691 /* VideoGamesProjeTests.swift in Sources */,
+				33D8BD2B25717DFA0075B691 /* SearchBarTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

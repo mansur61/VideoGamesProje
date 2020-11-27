@@ -12,26 +12,24 @@ import  Foundation
 
 class Anasayfa: UIViewController,GetGameListDelegate {
 
-    var getGameListArray:getGameListInfo?
-    var dataSource = GetGameListSource(baseUrl: "https://api.rawg.io/api/")
-       
+
+    // Modals
     var data=["",""]
     var dataVeri:[String] = []
-    
-    var veriJSON : [String:Any] = [:]
-    
     var filterData: [String]!
-
     var imageCell: [String] = []
-    
     let silider = SiliderPagesData()
+    var getGameListArray:getGameListInfo?
+    var dataSource = GetGameListSource(baseUrl: "https://api.rawg.io/api/")
     
+    // Views
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pageControl: UIPageControl!
-     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var uyariLabel: UILabel!
     
-     @IBOutlet weak var uyariLabel: UILabel!
+    //Conrollers
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -50,8 +48,6 @@ class Anasayfa: UIViewController,GetGameListDelegate {
         self.getGameListArray=getGameList
         
         if let total = self.getGameListArray?.results.count {
-        //let bak = self.getGameListArray!.results.count
-           
             for i in 0..<total {
                 self.imageCell.append(self.getGameListArray!.results[i].background_image!)
                 self.dataVeri.append(self.getGameListArray!.results[i].name!)
@@ -61,14 +57,11 @@ class Anasayfa: UIViewController,GetGameListDelegate {
     
             DispatchQueue.main.async {
             let toplam = self.getGameListArray!.results.count
-               // print("total :\(toplam) -> self.imageCell.count:\(self.imageCell.count)")
-           // if let total = self.getGameListArray?.results.count {
-            
+           
                 if toplam >= self.imageCell.count {
                     self.silider.siliderPages(resimler: self.imageCell,scrollView: self.scrollView,pageControl: self.pageControl)
                 }
-                
-           // }
+
             self.collection.reloadData()
         }
     }
@@ -129,7 +122,7 @@ extension Anasayfa:UICollectionViewDataSource{
                       
                       return cell
                   }
-                  print("oyunAdi:\(oyunAdi) -> rating: \(rating) -> released :\(released) -> resim: \(resim)")
+                 // print("oyunAdi:\(oyunAdi) -> rating: \(rating) -> released :\(released) -> resim: \(resim)")
                   
                   cell.gameAd?.text = oyunAdi
                   cell.rating_released?.text = "\(released) - \(rating)"
@@ -197,3 +190,4 @@ extension Anasayfa: UIScrollViewDelegate{
         pageControl.currentPage = Int(page)
     }
 }
+

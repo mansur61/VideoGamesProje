@@ -9,17 +9,17 @@
 import UIKit
 
 class FavorilerConroller: UIViewController {
-
+    
+    //Views
     @IBOutlet weak var collection: UICollectionView!
     
-    
+    //Modals
     var resimAl=""
     var playGame = ""
     var relMat = ""
-
-    
     var favListAl:[String:String] = [:]
     
+    //Conrollers
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +27,6 @@ class FavorilerConroller: UIViewController {
             self.collection.isHidden = false
             alertMesaj(mesaj:"Favorilere İlk Önce Ekleme Yapınız")
         }
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
