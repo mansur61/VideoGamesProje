@@ -144,11 +144,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHg-Hg-V6e">
-                                <rect key="frame" x="0.0" y="362" width="414" height="510"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sHg-Hg-V6e">
+                                <rect key="frame" x="0.0" y="333" width="414" height="539"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="510" id="knm-ND-iiI"/>
+                                    <constraint firstAttribute="height" constant="539" id="knm-ND-iiI"/>
                                     <constraint firstAttribute="width" constant="414" id="nxo-3d-Ntw"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h8U-9f-SyP">
@@ -222,47 +222,59 @@
                                     <outlet property="delegate" destination="uCF-sW-CKk" id="sbs-Yl-6zB"/>
                                 </connections>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-1K-C1T">
-                                <rect key="frame" x="0.0" y="96" width="414" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="6tP-TN-Di6"/>
-                                    <constraint firstAttribute="height" constant="44" id="9aU-5W-eAb"/>
-                                </constraints>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gA7-1K-C1T">
+                                <rect key="frame" x="5" y="84" width="405" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
-                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TBv-03-lcd">
-                                <rect key="frame" x="161" y="305" width="92" height="37"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5a-az-Y13">
+                                <rect key="frame" x="45" y="148" width="325" height="132"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="0m5-qY-yUE"/>
-                                    <constraint firstAttribute="width" constant="92" id="Azb-Yc-Co6"/>
-                                </constraints>
-                            </pageControl>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5a-az-Y13">
-                                <rect key="frame" x="45" y="148" width="325" height="141"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="325" id="QfT-D2-dbT"/>
-                                    <constraint firstAttribute="height" constant="141" id="ZlI-6F-jqt"/>
+                                    <constraint firstAttribute="height" constant="141" id="4wb-Va-MZn"/>
+                                    <constraint firstAttribute="width" constant="325" id="zeu-hw-Iwj"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="9wg-ee-XKN"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="RiE-oY-gOA"/>
                             </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Üzgünüz, aradığınız oyun bulunamadı!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I36-Pi-P5i">
+                                <rect key="frame" x="21" y="418" width="371" height="60"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="TBv-03-lcd">
+                                <rect key="frame" x="45" y="288" width="325" height="37"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="325" id="5WV-S8-wXa"/>
+                                    <constraint firstAttribute="height" constant="37" id="COb-R6-eQh"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gA7-1K-C1T" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" constant="5" id="1BY-hh-Z3M"/>
+                            <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="TBv-03-lcd" secondAttribute="trailing" constant="44" id="1yP-xb-jFN"/>
                             <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="sHg-Hg-V6e" secondAttribute="trailing" id="33I-Tp-0IV"/>
-                            <constraint firstItem="C5a-az-Y13" firstAttribute="top" secondItem="gA7-1K-C1T" secondAttribute="bottom" constant="16" id="55B-nT-lZG"/>
-                            <constraint firstItem="TBv-03-lcd" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" constant="161" id="6xB-N6-63T"/>
-                            <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="C5a-az-Y13" secondAttribute="trailing" constant="44" id="8fz-XW-sVh"/>
-                            <constraint firstItem="TBv-03-lcd" firstAttribute="top" secondItem="C5a-az-Y13" secondAttribute="bottom" constant="16" id="P6d-Wx-2Od"/>
-                            <constraint firstItem="gA7-1K-C1T" firstAttribute="leading" secondItem="sHg-Hg-V6e" secondAttribute="leading" id="VMP-09-Txn"/>
+                            <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="C5a-az-Y13" secondAttribute="trailing" constant="44" id="42m-kR-kgG"/>
+                            <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="gA7-1K-C1T" secondAttribute="trailing" constant="4" id="8uY-fk-3tX"/>
+                            <constraint firstItem="I36-Pi-P5i" firstAttribute="centerX" secondItem="Kof-UM-bx1" secondAttribute="centerX" id="BGe-7u-1U1"/>
+                            <constraint firstItem="TBv-03-lcd" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" constant="45" id="NOw-39-9Bu"/>
+                            <constraint firstItem="C5a-az-Y13" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" constant="45" id="Phe-Ju-2hB"/>
+                            <constraint firstItem="TBv-03-lcd" firstAttribute="top" secondItem="Kof-UM-bx1" secondAttribute="top" constant="200" id="SkB-vn-5xq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="sHg-Hg-V6e" secondAttribute="bottom" constant="-59" id="WT8-Pc-Dty"/>
-                            <constraint firstItem="sHg-Hg-V6e" firstAttribute="top" secondItem="TBv-03-lcd" secondAttribute="bottom" constant="20" id="X6G-p3-hDL"/>
+                            <constraint firstItem="sHg-Hg-V6e" firstAttribute="top" secondItem="TBv-03-lcd" secondAttribute="bottom" constant="8" id="gEl-Gb-AKA"/>
                             <constraint firstItem="sHg-Hg-V6e" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" id="gGi-JD-KGx"/>
-                            <constraint firstItem="Kof-UM-bx1" firstAttribute="trailing" secondItem="TBv-03-lcd" secondAttribute="trailing" constant="161" id="j1h-qz-Q5v"/>
-                            <constraint firstItem="C5a-az-Y13" firstAttribute="leading" secondItem="Kof-UM-bx1" secondAttribute="leading" constant="45" id="sCP-Lf-Lnh"/>
-                            <constraint firstItem="gA7-1K-C1T" firstAttribute="top" secondItem="Kof-UM-bx1" secondAttribute="top" constant="8" id="t3a-9G-uov"/>
+                            <constraint firstItem="C5a-az-Y13" firstAttribute="top" secondItem="Kof-UM-bx1" secondAttribute="top" constant="60" id="i9q-ry-bgU"/>
+                            <constraint firstItem="I36-Pi-P5i" firstAttribute="centerY" secondItem="Kof-UM-bx1" secondAttribute="centerY" constant="-2.5" id="kzK-z7-Der"/>
+                            <constraint firstItem="C5a-az-Y13" firstAttribute="top" secondItem="gA7-1K-C1T" secondAttribute="bottom" constant="8" id="sEf-sG-nRW"/>
+                            <constraint firstItem="TBv-03-lcd" firstAttribute="top" secondItem="C5a-az-Y13" secondAttribute="bottom" constant="-1" id="vCc-no-Fcl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kof-UM-bx1"/>
                     </view>
@@ -272,12 +284,13 @@
                         <outlet property="pageControl" destination="TBv-03-lcd" id="KzQ-Yn-YUe"/>
                         <outlet property="scrollView" destination="C5a-az-Y13" id="UCz-n4-y33"/>
                         <outlet property="searchBar" destination="gA7-1K-C1T" id="9LC-yB-QWa"/>
+                        <outlet property="uyariLabel" destination="I36-Pi-P5i" id="zzg-Za-f4e"/>
                         <segue destination="jmq-ic-mAn" kind="show" identifier="gameDetail" id="LCi-CT-rYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HPU-Ys-o4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1700" y="1553"/>
+            <point key="canvasLocation" x="-1700.0000000000002" y="1552.9017857142856"/>
         </scene>
         <!--Fvaoriler-->
         <scene sceneID="8Oo-jt-VMo">
