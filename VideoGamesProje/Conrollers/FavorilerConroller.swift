@@ -22,24 +22,42 @@ class FavorilerConroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if favListAl.capacity == 0 {
+            self.collection.isHidden = false
+            alertMesaj(mesaj:"Favorilere İlk Önce Ekleme Yapınız")
+        }
 
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(true)
         collection.reloadData()
     }
+    
     override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
            // Dispose of any resources that can be recreated.
        }
-
+    
+    func alertMesaj(mesaj:String){
+        let alert = UIAlertController(title: "FAVORİLER", message: mesaj, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "TAMAM", style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
 }
 extension FavorilerConroller: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if favListAl.count == 0 {
-            return 1
+            return 0
         }else {
             return favListAl.capacity / favListAl.count
         }

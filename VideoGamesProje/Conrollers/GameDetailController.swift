@@ -25,11 +25,16 @@ class GameDetailController: UIViewController,GetGameDetailsDelegate {
     
     var getGameDetailsArray:getGameDetailsInfo!
     override func viewDidLoad() {
-        detailsSource.delegate=self
-        print("Anasayfadan geldim name ->\(nameImage) ")
+        
         super.viewDidLoad()
-
-       // imageDetay.image = UIImage.init(data: try! Data.init(contentsOf: URL(string: (nameImage))!))
+        detailsSource.delegate=self
+        
+        //print("nameImage:\(nameImage) -> gameNameDetayGetir: \(gameNameDetayGetir) -> released :\(rele_Met) -> resim: \(aciklama)")
+        
+        if URL(string: (nameImage)) != nil {
+            self.imageDetay?.image =  UIImage.init(data: try! Data.init(contentsOf: URL(string: (nameImage))!))
+               
+         }
         gameNameDetay?.text! = gameNameDetayGetir
         released_metacriticRate?.text! = rele_Met
         gameDescription?.text! = aciklama

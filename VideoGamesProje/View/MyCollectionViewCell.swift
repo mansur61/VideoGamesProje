@@ -10,10 +10,11 @@ import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var resim: UIImageView!
-    @IBOutlet weak var gameAd: UILabel!
-    @IBOutlet weak var rating_released: UILabel!
+    @IBOutlet weak var resim: UIImageView?
+    @IBOutlet weak var gameAd: UILabel?
+    @IBOutlet weak var rating_released: UILabel?
     
+   
     
     
     override func awakeFromNib() {

@@ -61,8 +61,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aw6-E7-wFB">
-                                <rect key="frame" x="20" y="101" width="374" height="221"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aw6-E7-wFB">
+                                <rect key="frame" x="20" y="101.5" width="374" height="219"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="221" id="BRh-tg-rDE"/>
@@ -91,12 +91,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eo-wF-fRg">
-                                <rect key="frame" x="352" y="278" width="42" height="39"/>
+                                <rect key="frame" x="331" y="262" width="56" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="TcO-G7-o1B"/>
-                                    <constraint firstAttribute="height" constant="39" id="cqL-v4-OpN"/>
+                                    <constraint firstAttribute="width" constant="56" id="TcO-G7-o1B"/>
+                                    <constraint firstAttribute="height" constant="49" id="cqL-v4-OpN"/>
                                 </constraints>
-                                <state key="normal" image="heart.fill" catalog="system"/>
+                                <state key="normal" image="begeni.png"/>
                                 <connections>
                                     <action selector="foveriButton:" destination="jmq-ic-mAn" eventType="touchUpInside" id="p3R-X3-r7D"/>
                                 </connections>
@@ -111,10 +111,10 @@
                             <constraint firstItem="180-Pt-NGJ" firstAttribute="width" secondItem="tUl-f4-lJS" secondAttribute="width" id="Gqh-d2-pqN"/>
                             <constraint firstItem="Aw6-E7-wFB" firstAttribute="leading" secondItem="K62-e9-hC0" secondAttribute="leading" constant="20" id="Lug-B3-Yzy"/>
                             <constraint firstItem="Aw6-E7-wFB" firstAttribute="top" secondItem="K62-e9-hC0" secondAttribute="top" constant="13" id="Opg-eJ-XgT"/>
-                            <constraint firstItem="K62-e9-hC0" firstAttribute="trailing" secondItem="9eo-wF-fRg" secondAttribute="trailing" constant="20" id="Tdd-ZQ-3mf"/>
+                            <constraint firstItem="K62-e9-hC0" firstAttribute="trailing" secondItem="9eo-wF-fRg" secondAttribute="trailing" constant="27" id="Tdd-ZQ-3mf"/>
                             <constraint firstItem="K62-e9-hC0" firstAttribute="trailing" secondItem="180-Pt-NGJ" secondAttribute="trailing" constant="20" id="Ua1-5F-FxX"/>
                             <constraint firstItem="K62-e9-hC0" firstAttribute="trailing" secondItem="wDT-uH-eDH" secondAttribute="trailing" constant="20" id="YfN-9X-cKR"/>
-                            <constraint firstItem="9eo-wF-fRg" firstAttribute="top" secondItem="Aw6-E7-wFB" secondAttribute="bottom" constant="-44" id="egq-Bv-IKr"/>
+                            <constraint firstItem="9eo-wF-fRg" firstAttribute="top" secondItem="Aw6-E7-wFB" secondAttribute="bottom" constant="-60" id="egq-Bv-IKr"/>
                             <constraint firstItem="K62-e9-hC0" firstAttribute="bottom" secondItem="wDT-uH-eDH" secondAttribute="bottom" id="j4h-TT-A9a"/>
                             <constraint firstItem="tUl-f4-lJS" firstAttribute="top" secondItem="180-Pt-NGJ" secondAttribute="bottom" constant="-6" id="l5a-se-bwU"/>
                             <constraint firstItem="180-Pt-NGJ" firstAttribute="leading" secondItem="K62-e9-hC0" secondAttribute="leading" constant="20" id="lLS-Z0-qwJ"/>
@@ -421,6 +421,8 @@
         <segue reference="6nr-aZ-tj6"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="begeni.png" width="66" height="65"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
     </resources>
