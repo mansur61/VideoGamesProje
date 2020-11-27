@@ -82,17 +82,16 @@ extension Anasayfa:UICollectionViewDelegate{
         
         let vc = storyboard?.instantiateViewController(identifier: "gameDetail") as? GameDetailController
         
-        if let gameNameDetayGetir = self.getGameListArray?.results[indexPath.row].name , let aciklama = self.getGameListArray?.description , let relesed = self.getGameListArray?.results[indexPath.row].released , let nameImage = self.getGameListArray?.results[indexPath.row].background_image ,let metirict = self.getGameListArray?.results[indexPath.row].metacritic  {
+        if let gameNameDetayGetir = self.getGameListArray?.results[indexPath.row].name , let aciklama = self.getGameListArray?.seo_title , let relesed = self.getGameListArray?.results[indexPath.row].released , let nameImage = self.getGameListArray?.results[indexPath.row].background_image ,let metirict = self.getGameListArray?.results[indexPath.row].metacritic  {
             
-            print("oyunAdi:\(gameNameDetayGetir) -> aciklama: \(aciklama)",
+            /*print("oyunAdi:\(gameNameDetayGetir) -> aciklama: \(aciklama)",
                 "-> \(nameImage) -> \(nameImage) -> relesed : \(relesed) -> metirict: \(metirict) ")
+            */
             
-            
-            vc!.nameImage = nameImage //self.getGameListArray!.results[indexPath.row].background_image!
-            vc!.gameNameDetayGetir = gameNameDetayGetir//self.getGameListArray!.results[indexPath.row].name!
+            vc!.nameImage = nameImage
+            vc!.gameNameDetayGetir = gameNameDetayGetir
             vc!.rele_Met = "\(relesed)-\(metirict)"
-            //String(describing: self.getGameListArray!.results[indexPath.row].released! + "-" + String(describing: self.getGameListArray!.results[indexPath.row].metacritic!) )
-            vc!.aciklama = aciklama//self.getGameListArray!.description!
+            vc!.aciklama = aciklama
              
             
         }
